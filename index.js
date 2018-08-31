@@ -21,7 +21,7 @@ const resolvers = {
 const server = new ApolloServer({ typeDefs, resolvers });
 server.applyMiddleware({ app });
 
-models.sequelize.sync().then(() =>{
+models.sequelize.sync({force: true}).then(() =>{
 	app.listen(PORT);
 });
 

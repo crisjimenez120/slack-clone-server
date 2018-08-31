@@ -3,6 +3,10 @@ import Sequelize from 'sequelize';
 
 const sequelize = new Sequelize('slack', 'cris', '',{
 	dialect: 'postgres',
+	define: {
+    underscoredAll: true, // gives us global table name snake_case
+    underscored: true, 
+  },
 });
 
 const models = {
