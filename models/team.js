@@ -5,9 +5,6 @@ export default  (sequelize, DataTypes) => {
       unique : true,
     },
   },
-    {
-      underscored : true
-    },
       
   );
 
