@@ -13,27 +13,13 @@ const PORT = 4000;
 const app = express();
 
 
-//const graphqlEndpoint = '/graphql';
 
-// app.use(
-//   graphqlEndpoint,
-//   bodyParser.json(),
-//   graphqlExpress({
-//     schema,
-//     context: {
-//       models,
-//       user: {
-//         id: 1,
-//       },
-//     },
-//   }),
-// );
 
 
 const server = new ApolloServer({ typeDefs, resolvers });
 server.applyMiddleware({ app });
 
-models.sequelize.sync().then(() =>{
+models.sequelize.sync({force: true}).then(() =>{
 	app.listen(PORT);
 });
 
